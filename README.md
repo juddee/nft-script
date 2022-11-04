@@ -1,7 +1,9 @@
 # nft-script
 A PHP script that generate a CHIP-0007 compatible json, calculate the SHA-256 of the json file and append it to the CSV file 
-## Installation
+## Requirement
 [PHP](https://php.net) 7.3+
+
+## Installation
 To download the script 
 ```bash
 git clone https://github.com/juddee/nft-script.git
