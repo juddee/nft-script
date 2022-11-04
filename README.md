@@ -27,7 +27,7 @@ Start your server and point your browser to script in the (htdocs)
 
   
   
-   //calculate the SHA-256 hash of the json file and append it the csv file
+   //calculate the SHA-256 hash of the json file and add it to the csv file
   // $script->append_hash_to_csv('data/csv_file');
   
   $script->append_hash_to_csv('data/prybar.json');
