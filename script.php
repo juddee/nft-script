@@ -49,13 +49,13 @@ class Script{
         return hash('sha256', $csvFile);
     }
 
-    function append_hash_to_csv()
+    function append_hash_to_csv($json_file)
     {
         $newCsvData = array();
         if (($handle = fopen($this->csv_file, "r")) !== FALSE) {
             while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-                $result =$this->get_hash($this->csv_file);
-                $file_name= explode('.',$this->csv_file)[0];
+                $result =$this->get_hash($json_file);
+                $file_name= explode('.',explode('data/',$json_file)[1])[0];
                 $data[] = $file_name.".".$result.".csv";
                 $newCsvData[] = $data;
             }
@@ -69,12 +69,15 @@ class Script{
         }
     
         fclose($handle);
-    
-        // 
+
         echo "Hash added successfully ..";
     }
 
 }
-
+ 
+// $script = new Script('Prybar.csv');
+// $script->create_json_file('data/prybar.json');
+// $script->append_hash_to_csv('data/prybar.json');
 
 ?>
+
